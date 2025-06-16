@@ -1,0 +1,223 @@
+{
+  GALAXY: {
+    CONFIGURATION: {
+      SEEDS: Random
+      AutoDisconnectCards: "false"
+      IPPort: 0.0.0.0:50051
+      Username: ""
+      ServerAutolaunch: "false"
+      ServerAutoclose: "true"
+      ServerHangTimeout: min:1
+      ServerRecoveryAttempts: "0"
+      ServerMinRecoveryPeriod: sec:0
+      GALAXYLOG: {
+        LogPath: ""
+        LogName: GalaxyLog.csv
+        SplitLog: ""
+        LogLevel: Debug-Max
+        LogAttributes: Overwrite
+        LogDirStructure: Flat
+      }
+      SOLARLOG: {
+        LogPath: ""
+        LogName: SolarLog.csv
+        SplitLog: ""
+        LogLevel: Debug-Max
+        LogAttributes: Overwrite
+      }
+      OPTIMUSLOG: {
+        LogPath: ""
+        LogName: OptimusLog.csv
+        SplitLog: ""
+        LogLevel: Information
+        LogAttributes: Overwrite
+      }
+      OPTIMUSMAPFILES: {
+        PortmapFile: ""
+        TestMapFile: ""
+      }
+      MultiSutSettings: {
+        ContentFile: ""
+        SutTimeout: 600:sec
+      }
+      APPLOG: {
+        AppLogSources: ""
+        AppLogDest: ""
+      }
+      VARIABLES: {
+        TimeOut: 0:min
+        Duration: 1:Loop
+        NumDisplay: Dynamically Updated
+        NumDrive: Dynamically Updated
+        test_time: "1"
+      }
+      SYSTEMOVERRIDES: {
+        CPU: Default
+        PCH: Default
+      }
+      ATTRIBUTES: ""
+    }
+    GALAXYTEST: [
+      {
+        FLOW_01: [
+          {
+            @Attributes: {
+              CapExeTime: 0:min
+              Delay: 0:sec
+              Desc: Test
+              Duration: 1:Loop
+              EnableRun: "true"
+              ExecuteOrder: "2"
+              IgnoreErrorCode: 0x0
+              RunMode: Default
+              TestRange: Max
+              TimeOut: 0:min
+              Weight: "1"
+            }
+          }
+          {
+            TEST_01: {
+              @Attributes: {
+                CapExeTime: 0:min
+                Delay: 0:sec
+                Desc: Memrunner
+                Duration: 1:Loop
+                EnableRun: "false"
+                ExecuteOrder: "1"
+                FailPolicy: Exit:1
+                IgnoreErrorCode: 0x0
+                RunType: Default
+                TimeOut: 0:min
+                Weight: "1"
+              }
+            }
+          }
+          {
+            TEST_02: {
+              @Attributes: {
+                CapExeTime: 0:min
+                Delay: 0:sec
+                Desc: Prime95
+                Duration: 1:Loop
+                EnableRun: "true"
+                ExecuteOrder: "1"
+                FailPolicy: Exit:1
+                IgnoreErrorCode: 0x0
+                RunType: Default
+                TimeOut: 0:min
+                Weight: "1"
+              }
+            }
+          }
+          {
+            TEST_03: {
+              @Attributes: {
+                CapExeTime: 0:min
+                Delay: 0:sec
+                Desc: Heaven
+                Duration: 1:Loop
+                EnableRun: "false"
+                ExecuteOrder: "1"
+                FailPolicy: Exit:1
+                IgnoreErrorCode: 0x0
+                RunType: Default
+                TimeOut: 0:min
+                Weight: "1"
+              }
+            }
+          }
+        ]
+      }
+      {
+        FLOW_02: [
+          {
+            @Attributes: {
+              CapExeTime: 0:min
+              Delay: 0:sec
+              Desc: S3
+              Duration: 1:Loop
+              EnableRun: "true"
+              ExecuteOrder: "1"
+              IgnoreErrorCode: 0x0
+              RunMode: Default
+              TestRange: Max
+              TimeOut: 0:min
+              Weight: "1"
+            }
+          }
+          {
+            TEST: {
+              @Attributes: {
+                CapExeTime: 0:min
+                Delay: 0:sec
+                Desc: Solar
+                Duration: 1:Loop
+                EnableRun: "true"
+                ExecuteOrder: "1"
+                FailPolicy: Exit:1
+                IgnoreErrorCode: 0x0
+                RunType: Default
+                TimeOut: 0:min
+                Weight: "1"
+              }
+            }
+          }
+        ]
+      }
+    ]
+    TESTCONFIG: {
+      TEST_01: {
+        @Attributes: {
+          Command: "/data/applications/solar/solar.sh "
+          Desc: Solar
+        }
+        arg: {
+          @Attributes: {
+            name: /cfg
+            val:
+              '''
+              /data/validation/yocto-test-content/concurrency/common/script/python/S3_cycle.xml
+
+              '''
+          }
+        }
+      }
+      TEST_02: {
+        @Attributes: {
+          Command: python3 /data/validation/yocto-test-content/concurrency/common/script/python/app_prime95.py
+          Desc: Prime95
+        }
+        arg: {
+          @Attributes: {
+            name: -t
+            val: "20"
+          }
+        }
+      }
+      TEST_03: {
+        @Attributes: {
+          Command: " python3 /data/validation/yocto-test-content/concurrency/common/script/python/app_heaven.py "
+          Desc: Heaven
+        }
+        arg: {
+          @Attributes: {
+            name: -t
+            val: "1"
+          }
+        }
+      }
+      TEST_04: {
+        @Attributes: {
+          Command: python3 /data/validation/yocto-test-content/concurrency/common/script/python/app_memrunner.py
+          Desc: Memrunner
+        }
+        arg: {
+          @Attributes: {
+            name: -t
+            val: "10"
+          }
+        }
+      }
+    }
+  }
+}

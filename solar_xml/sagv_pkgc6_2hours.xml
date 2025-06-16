@@ -1,0 +1,789 @@
+<SOLAR>
+    <Version>3.23.460.0</Version>
+    <LoopTracker>1</LoopTracker>
+    <TEST_CONTROL_CFG>
+        <AutoRunCfg>
+            <CSTATES>true</CSTATES>
+            <HWP>false</HWP>
+            <PSTATES>false</PSTATES>
+            <TSTATES>false</TSTATES>
+            <SDC>false</SDC>
+            <GSTATES>false</GSTATES>
+            <PECI>false</PECI>
+            <iGFX-GCD-DVFS>false</iGFX-GCD-DVFS>
+            <iGFX-GCD-RC6>false</iGFX-GCD-RC6>
+            <dGFX-DVFS>false</dGFX-DVFS>
+            <dGFX-RC6>false</dGFX-RC6>
+            <dGFX-SAGV>false</dGFX-SAGV>
+            <DGFX-RESET>false</DGFX-RESET>
+            <dGFX-MEDIA>false</dGFX-MEDIA>
+            <dGFX-MEDIA-RC6>false</dGFX-MEDIA-RC6>
+            <dGFX-MEMSS>false</dGFX-MEMSS>
+            <FANSPEED-CTR>false</FANSPEED-CTR>
+            <SAMedia-RC6>false</SAMedia-RC6>
+            <SAMedia-DVFS>false</SAMedia-DVFS>
+            <Vpu-DVFS>false</Vpu-DVFS>
+            <VPU-FLR>false</VPU-FLR>
+            <PS-DVFS>false</PS-DVFS>
+            <IS-DVFS>false</IS-DVFS>
+            <UFS>false</UFS>
+            <D2D-GV>false</D2D-GV>
+            <SAGV>true</SAGV>
+            <PSF0-GV>false</PSF0-GV>
+            <NClk-DVFS>false</NClk-DVFS>
+            <MESH-GV>false</MESH-GV>
+            <Ice-Pstates>false</Ice-Pstates>
+            <Ice-Cstates>false</Ice-Cstates>
+            <FACT>false</FACT>
+            <PCIe-Link>false</PCIe-Link>
+            <PCIe-GenWidth>false</PCIe-GenWidth>
+            <Dx-States>false</Dx-States>
+            <Cambria>false</Cambria>
+            <NA>false</NA>
+            <TestControl>false</TestControl>
+        </AutoRunCfg>
+        <TestTraceCfg/>
+        <WorkloadCfg>
+            <Log_File_Name>Generated/SolarWorkload.csv</Log_File_Name>
+            <ExeMode>CM</ExeMode>
+            <MaxWorkloads>Max</MaxWorkloads>
+            <Delay>0</Delay>
+            <LoopNum>1</LoopNum>
+        </WorkloadCfg>
+    </TEST_CONTROL_CFG>
+    <GLOBALPM>
+        <!--Valid single option for tag Log_Level:No-Log,Critical,Error,Warning,Information,Debug-->
+        <!--Valid single option for tag TestMode:Verify;Exercise-->
+        <CORE>
+            <CSTATES>
+                <PkgAffinity>All</PkgAffinity>
+                <ModuleAffinity>All</ModuleAffinity>
+                <CoreAffinity>All</CoreAffinity>
+                <PxMxCxScope>100:0:0</PxMxCxScope>
+                <ExeCycles>min:120</ExeCycles>
+                <StartDelayTime>sec:1</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>PC1:0;PC3:0;PC6:5;PC6.1:0;PC6.2:0;PC7:0;PC8:0;PC9:0;PC10:0;PC10.1:0;PC10.2:0;PC10.3:0;CLC2:0;CLC3:0;CLC6:0;MC6:0;C0E:0;CC1:0;CC3:0;CC6:0;CC7:0</FailTolerance>
+                <SanityEarlyExit>PC1:0;PC3:0;PC6:0;PC6.1:0;PC6.2:0;PC7:0;PC8:0;PC9:0;PC10:0;PC10.1:0;PC10.2:0;PC10.3:0;CLC2:0;CLC3:0;CLC6:0;MC6:0;C0E:0;CC1:0;CC3:0;CC6:0;CC7:0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:-->
+                <KNOBS></KNOBS>
+                <ActiveTime>sec:1</ActiveTime>
+                <InStateTime>sec:1</InStateTime>
+                <RandomPkgVoting>Random[0]</RandomPkgVoting>
+                <ExeCstates>PC6|sec:1|sec:1</ExeCstates>
+                <IceState>None</IceState>
+                <PerStateCond>0x00000000</PerStateCond>
+                <CoreExclusion>C0E:[];CC1:[];CC3:[];CC6:[];CC7:[]</CoreExclusion>
+                <SubStates>PC1:[];PC3:[];PC6:[];PC6.1:[];PC6.2:[];PC7:[];PC8:[];PC9:[];PC10:[];PC10.1:[];PC10.2:[];PC10.3:[];CLC2:[];CLC3:[];CLC6:[];MC6:[];C0E:[];CC1:[];CC3:[];CC6:[];CC7:[]</SubStates>
+            </CSTATES>
+            <PSTATES>
+                <PkgAffinity>All</PkgAffinity>
+                <ModuleAffinity>All</ModuleAffinity>
+                <CoreAffinity>All</CoreAffinity>
+                <PxMxCxScope>100:0:0</PxMxCxScope>
+                <ExeCycles>Cycles:100</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:-->
+                <KNOBS></KNOBS>
+                <LimitReasonMask>0xffffffff</LimitReasonMask>
+                <TurboLimitCores></TurboLimitCores>
+                <ExePstates>P0...Pn</ExePstates>
+                <RatioDistLoMeHi>FF:FF:FF</RatioDistLoMeHi>
+                <FreqTolerance>80</FreqTolerance>
+                <ExitOnPassRatios>P0_1</ExitOnPassRatios>
+                <SwitchTime>msec:80</SwitchTime>
+            </PSTATES>
+            <HWP>
+                <PkgAffinity>All</PkgAffinity>
+                <ModuleAffinity>All</ModuleAffinity>
+                <CoreAffinity>All</CoreAffinity>
+                <PxMxCxScope>100:0:0</PxMxCxScope>
+                <ExeCycles>Cycles:100</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:-->
+                <KNOBS></KNOBS>
+                <LimitReasonMask>0xffffffff</LimitReasonMask>
+                <TurboLimitCores></TurboLimitCores>
+                <ExeValueSet></ExeValueSet>
+                <ExePstates>P0...Pn</ExePstates>
+                <RatioDistLoMeHi>FF:FF:FF</RatioDistLoMeHi>
+                <FreqTolerance>80</FreqTolerance>
+                <HwpPkgThreadAffinity>All</HwpPkgThreadAffinity>
+                <BigCorePerfScaler></BigCorePerfScaler>
+                <AtomPerfScaler></AtomPerfScaler>
+                <HwpPkgMode>Random[0]</HwpPkgMode>
+                <HwpEppValid>Random</HwpEppValid>
+                <HwpMinValid>Random</HwpMinValid>
+                <HwpMaxValid>Random</HwpMaxValid>
+                <HwpDesiredValid>Random</HwpDesiredValid>
+                <ExitOnPassRatios>P0_1</ExitOnPassRatios>
+                <SwitchTime>msec:80</SwitchTime>
+            </HWP>
+            <TSTATES>
+                <RatioDistLoMeHi>FF:FF:FF</RatioDistLoMeHi>
+                <PxMxCxScope>100:0:0</PxMxCxScope>
+                <PkgAffinity>All</PkgAffinity>
+                <ModuleAffinity>All</ModuleAffinity>
+                <CoreAffinity>All</CoreAffinity>
+                <SwitchTime>msec:500</SwitchTime>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+                <DutyCycles></DutyCycles>
+                <ExitOnPassRatios></ExitOnPassRatios>
+            </TSTATES>
+            <SDC>
+                <PkgAffinity>All</PkgAffinity>
+                <SwitchTime>msec:500</SwitchTime>
+                <StartDelayTime>msec:200</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+                <DutyCycles>1-7F</DutyCycles>
+            </SDC>
+            <FACT>
+                <PkgAffinity>All</PkgAffinity>
+                <ModuleAffinity>All</ModuleAffinity>
+                <CoreAffinity>All</CoreAffinity>
+                <PxMxCxScope>100:0:0</PxMxCxScope>
+                <ExeCycles>Cycles:100</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;-->
+                <KNOBS></KNOBS>
+                <SwitchTime>msec:80</SwitchTime>
+                <ConfigState>Default|PQR:Default|G:Default</ConfigState>
+            </FACT>
+        </CORE>
+        <ICE>
+            <Ice-Cstates>
+                <PkgAffinity>All</PkgAffinity>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit></SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:-->
+                <KNOBS></KNOBS>
+                <AllPerICEIDScope>100:0</AllPerICEIDScope>
+                <ICeIDAffinity>All</ICeIDAffinity>
+                <ExeStates></ExeStates>
+                <ActiveTime>msec:80</ActiveTime>
+                <InStateTime>msec:80</InStateTime>
+            </Ice-Cstates>
+            <Ice-Pstates>
+                <PkgAffinity>All</PkgAffinity>
+                <ExeCycles>Cycles:100</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:-->
+                <KNOBS></KNOBS>
+                <AllPerICEIDScope>100:0</AllPerICEIDScope>
+                <ICeIDAffinity>All</ICeIDAffinity>
+                <!--Valid single option for tag ExePstates:P0...Pn, P1...Pn, Turbo, Specific:-->
+                <ExePstates>Max...Min</ExePstates>
+                <SwitchTime>msec:80</SwitchTime>
+                <StatusCheckDelay>0</StatusCheckDelay>
+                <LimitReasonMask></LimitReasonMask>
+                <RatioTolerance>0</RatioTolerance>
+            </Ice-Pstates>
+        </ICE>
+        <SYSTEM>
+            <GSTATES>
+                <ActiveTime>sec:60</ActiveTime>
+                <InStateTime>sec:60</InStateTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>2:PerSet</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <WakeUpTimeout>120:5</WakeUpTimeout>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;Sx_Legacy;RunDeviceCheck;ExitOnFail;ErrorOnPromotion-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag PrePostCheck:YellowBangCheck;DisplayUnderRunCheck;TDROccurrenceCheck;MemoryCheck;DeviceEnumerationCheck-->
+                <PrePostCheck></PrePostCheck>
+                <SoCWatchTime>10</SoCWatchTime>
+                <DeleteSoCLogs>false</DeleteSoCLogs>
+                <LPM_EN></LPM_EN>
+                <HoldPower>sec:5</HoldPower>
+                <!--Valid option list for SleepStates:-->
+                <!--S0ix;S3;S4;S5-->
+                <!--ShutDown;PowerOff;Warm-Reset;Cold-Reset;Global-Reset;Hybrid-ShutDown;Surprise-Reset-->
+                <!--G3OnSleep;G3OnS4;G3OnS5;G3;Reset-Button;Power-Button-->
+                <SleepStates></SleepStates>
+                <!--Valid single option for tag WakeEvent:RTC;External;HWRTC-->
+                <WakeEvent>RTC</WakeEvent>
+                <LoopEachSx>1</LoopEachSx>
+                <S0ixResThreshold>0</S0ixResThreshold>
+                <S0ixFailureLevel>S0iR</S0ixFailureLevel>
+                <PerDieS0ix>SOC</PerDieS0ix>
+                <DeviceEnumerationCheckMask>All</DeviceEnumerationCheckMask>
+            </GSTATES>
+            <PECI>
+                <ActiveTime>sec:1</ActiveTime>
+                <InStateTime>sec:1</InStateTime>
+                <StartDelayTime>msec:200</StartDelayTime>
+                <ExeCycles>10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+                <!--Valid single option for tag Interface:eSPI,MCTP,Serial-->
+                <Interface>eSPI</Interface>
+                <Commands></Commands>
+                <RdPkgConfigName></RdPkgConfigName>
+                <RdPkgConfigParams></RdPkgConfigParams>
+                <WrPkgConfigName></WrPkgConfigName>
+                <WrPkgConfigParams></WrPkgConfigParams>
+                <WrPkgConfigData></WrPkgConfigData>
+                <RdMSRName></RdMSRName>
+                <RdMSRExtName></RdMSRExtName>
+                <WrMSRName></WrMSRName>
+                <RdEndPointConfigName></RdEndPointConfigName>
+                <WrEndPointConfigName></WrEndPointConfigName>
+                <WrEndPointConfigAndMask></WrEndPointConfigAndMask>
+                <WrEndPointConfigOrMask></WrEndPointConfigOrMask>
+                <WrPCIConfig/>
+                <WrPCIConfigLocal/>
+                <RdPCIConfig/>
+                <RdPCIConfigLocal/>
+            </PECI>
+        </SYSTEM>
+        <GT>
+            <iGFX-GCD-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <LimitReasonMask>0x0</LimitReasonMask>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </iGFX-GCD-DVFS>
+            <iGFX-GCD-RC6>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <RC0Time>msec:100</RC0Time>
+                <RC6Time>sec:1</RC6Time>
+                <Rc0Method>Force</Rc0Method>
+                <ForceIdleDelay>usec:0</ForceIdleDelay>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </iGFX-GCD-RC6>
+            <dGFX-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <Device>All</Device>
+                <Tile>All</Tile>
+                <SwitchTime>sec:1</SwitchTime>
+                <LimitReasonMask>0x0</LimitReasonMask>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-DVFS>
+            <dGFX-RC6>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <Device>All</Device>
+                <Tile>All</Tile>
+                <RC0Time>msec:100</RC0Time>
+                <RC6Time>sec:1</RC6Time>
+                <Rc0Method>Force</Rc0Method>
+                <ForceIdleDelay>usec:0</ForceIdleDelay>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-RC6>
+            <dGFX-MEDIA-RC6>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <Device>All</Device>
+                <Tile>All</Tile>
+                <RC0Time>msec:100</RC0Time>
+                <RC6Time>sec:1</RC6Time>
+                <Rc0Method>Force</Rc0Method>
+                <ForceIdleDelay>usec:0</ForceIdleDelay>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-MEDIA-RC6>
+            <dGFX-SAGV>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios: Low;High-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <Device>All</Device>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-SAGV>
+            <DGFX-RESET>
+                <SwitchTime>sec:2</SwitchTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <!--Valid options for tag KNOBS:Random-->
+                <KNOBS></KNOBS>
+                <FailTolerance>0</FailTolerance>
+                <Log_Level>Information</Log_Level>
+            </DGFX-RESET>
+            <dGFX-MEDIA>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <Device>All</Device>
+                <Tile>All</Tile>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-MEDIA>
+            <dGFX-MEMSS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <Device>All</Device>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </dGFX-MEMSS>
+            <SAMedia-RC6>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <RC0Time>msec:100</RC0Time>
+                <RC6Time>sec:1</RC6Time>
+                <Rc0Method>Force</Rc0Method>
+                <ForceIdleDelay>usec:0</ForceIdleDelay>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </SAMedia-RC6>
+            <SAMedia-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <LimitReasonMask>0x0</LimitReasonMask>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </SAMedia-DVFS>
+            <FANSPEED-CTR>
+                <Device>All</Device>
+                <ControlPoint>T5[0:20,30:20,60:60,80:100,100:100]</ControlPoint>
+                <NumFanSpeedCtrPoints>5</NumFanSpeedCtrPoints>
+                <SwitchTime>sec:1</SwitchTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <Log_Level>Information</Log_Level>
+            </FANSPEED-CTR>
+        </GT>
+        <THERMAL>
+            <Rapl-DCF>
+                <ExeCycles>sec:1</ExeCycles>
+                <Log_Level>Information</Log_Level>
+            </Rapl-DCF>
+        </THERMAL>
+        <Device>
+            <PCIe-Link>
+                <SwitchTime>sec:1</SwitchTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+            </PCIe-Link>
+            <PCIe-GenWidth>
+                <SwitchTime>sec:1</SwitchTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+            </PCIe-GenWidth>
+            <Dx-States>
+                <SwitchTime>sec:1</SwitchTime>
+                <StartDelayTime>msec:100</StartDelayTime>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:Random;ExitOnFail-->
+                <KNOBS></KNOBS>
+            </Dx-States>
+            <Cambria>
+                <SwitchTime>sec:5</SwitchTime>
+                <ExeCycles>Cycles:1</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <Log_Level>Information</Log_Level>
+                <Arden>0</Arden>
+                <L1ss>l1.2</L1ss>
+                <PkgReadWrite>wr</PkgReadWrite>
+                <L1ssLatency>usec:40</L1ssLatency>
+                <WakeLatency>usec:10</WakeLatency>
+            </Cambria>
+        </Device>
+        <IPU>
+            <IS-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </IS-DVFS>
+            <PS-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </PS-DVFS>
+        </IPU>
+        <Vpu>
+            <Vpu-DVFS>
+                <arg name="SwitchTime" val="msec:80"/>
+                <arg name="StartDelayTime" val="msec:10"/>
+                <arg name="StatusCheckDelay" val="msec:1000"/>
+                <arg name="ConfigLoop" val="1"/>
+                <arg name="Ratios" val="Pn:P0:P0...Pn:0x80:1T5.3|msec:80"/>
+                <arg name="ExeCycles" val="Cycles:100"/>
+                <arg name="FailTolerance" val="0"/>
+                <arg name="SanityEarlyExit" val="0"/>
+                <arg name="ExitOnPassRatios" val="All"/>
+                <arg name="TestMode" val="Verify"/>
+                <arg name="Log_Level" val="Information"/>
+                <arg name="KNOBS" val=""/>
+            </Vpu-DVFS>
+            <VPU-FLR>
+                <arg name="SwitchTime" val="sec:2"/>
+                <arg name="StartDelayTime" val="msec:100"/>
+                <arg name="ExeCycles" val="Cycles:10"/>
+                <arg name="KNOBS" val=""/>
+                <arg name="FailTolerance" val="0"/>
+            </VPU-FLR>
+        </Vpu>
+        <UNCORE>
+            <SAGV>
+                <ExeCycles>min:120</ExeCycles>
+                <StartDelayTime>sec:1</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios: Low;Med;High;Dynamic;High+for SAGV and Low;Med;High;Dynamic for PSF0-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </SAGV>
+            <PSF0-GV>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios: Low;Med;High;Dynamic;High+for SAGV and Low;Med;High;Dynamic for PSF0-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </PSF0-GV>
+            <NClk-DVFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios: Min, Boot, Max, or any hex value between 0x6 - 0x18 (0x1B for MTL-S)-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </NClk-DVFS>
+            <UFS>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios : P0, P1, Pe, Pn, Pn - -, P0++, P0Pn, or digital value between 0~254, 0x0~0xFE-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <PkgAffinity>All</PkgAffinity>
+                <SwitchTime>sec:1</SwitchTime>
+                <LimitReasonMask>0x0</LimitReasonMask>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </UFS>
+            <D2D-GV>
+                <ExeCycles>Cycles:10</ExeCycles>
+                <StartDelayTime>msec:10</StartDelayTime>
+                <ConfigLoop>1</ConfigLoop>
+                <FailTolerance>0</FailTolerance>
+                <SanityEarlyExit>0</SanityEarlyExit>
+                <TestMode>Verify</TestMode>
+                <Log_Level>Information</Log_Level>
+                <!--Valid options for tag KNOBS:ExitOnFail;Random;QclkCheck(SAGV only)-->
+                <KNOBS></KNOBS>
+                <!--Valid options for tag Ratios: Min, Max or any hex value in between 0x4 - 0x15 (for LNL)-->
+                <!--If Ratios is defined as empty, use all ratios-->
+                <Ratios></Ratios>
+                <SwitchTime>sec:1</SwitchTime>
+                <ExitOnPassRatios>ALL</ExitOnPassRatios>
+            </D2D-GV>
+            <MESH-GV>
+                <arg name="SwitchTime" val="sec:1"/>
+                <arg name="CheckDelayTime" val="msec:10"/>
+                <arg name="StartDelayTime" val="msec:10"/>
+                <arg name="ExeCycles" val="Cycles:10"/>
+                <arg name="FailTolerance" val="0"/>
+                <arg name="ExitOnPassRatios" val="ALL"/>
+                <arg name="SanityEarlyExit" val="0"/>
+                <arg name="Log_Level" val="Information"/>
+                <arg name="KNOBS" val=""/>
+                <arg name="TestMode" val="Verify"/>
+                <arg name="RatioPUnit0" val="P0...Pn"/>
+                <arg name="RatioPUnit1" val="P0...Pn"/>
+                <arg name="RatioPUnit2" val="P0...Pn"/>
+                <arg name="RatioPUnit3" val="P0...Pn"/>
+                <arg name="RatioPUnit4" val="P0...Pn"/>
+                <arg name="LimitReasonMask" val="0x0"/>
+            </MESH-GV>
+        </UNCORE>
+    </GLOBALPM>
+    <GLOBALCONFIGURATION>
+        <SystemSetup>
+            <OverwriteCfg>
+                <CPU></CPU>
+                <PCH></PCH>
+                <Power_Base></Power_Base>
+                <MCH_Base></MCH_Base>
+                <GTTM_Address></GTTM_Address>
+                <ISP_MMIO_Base></ISP_MMIO_Base>
+                <P2SB_Base></P2SB_Base>
+                <PCIeExt_Address></PCIeExt_Address>
+                <CrashLog_Base></CrashLog_Base>
+                <XRAM_Base></XRAM_Base>
+            </OverwriteCfg>
+            <SETTING>
+                <Seeds></Seeds>
+                <TopoMode>OS</TopoMode>
+                <Ordered_Interleave_ICE_Flow>false</Ordered_Interleave_ICE_Flow>
+                <Ignore_Error_Code></Ignore_Error_Code>
+                <MailBox_Max_Busy_Check>1000</MailBox_Max_Busy_Check>
+                <Host_Address_Config></Host_Address_Config>
+                <Log_Path></Log_Path>
+                <Log_File_Name>SolarLog.csv</Log_File_Name>
+                <Read_Interval></Read_Interval>
+                <Log_Add_Option>Overwrite</Log_Add_Option>
+                <Log_Level>Information</Log_Level>
+                <Flow_Config>No Interleave</Flow_Config>
+                <Collect-Crashlog-AllResets>false</Collect-Crashlog-AllResets>
+                <Check_Bios_Knobs>true</Check_Bios_Knobs>
+            </SETTING>
+        </SystemSetup>
+        <SysConfiguration>
+            <SYSTEM>
+                <GSTATES>
+                    <!--Valid Settings Names : HangOnGlbReset; Hybrid_Sleep; Fast_Startup; AC_Deep_S3; DC_Deep_S3; AC_Deep_S4; DC_Deep_S4; AC_Deep_S5; DC_Deep_S5-->
+                </GSTATES>
+                <OS>
+                    <!--Valid single option for tag Power_Scheme:Default,Balance,Power-Saver,High-Performance,Random,All-->
+                    <!--Valid single option for tag Battery_Simulation:Default,AC,DC-->
+                </OS>
+                <KNOBS>
+                    <LTR_IGN_Mask>0</LTR_IGN_Mask>
+                    <Snoop_Latency_Mask>0</Snoop_Latency_Mask>
+                </KNOBS>
+            </SYSTEM>
+            <CORE>
+                <CONFIG>
+                    <!--CONFIG format : Socket; Name; Value-->
+                    <!--Valid Config options for CSTATES:-->
+                    <!--   SDC; Time_MWait; Enhanced_CState;C1_Demotion; C1_UnDemotion; C3_Demotion; C3_UnDemotion; PkgC_Demotion;PkgC_UnDemotion-->
+                    <!--Valid Config options for PSTATES:-->
+                    <!--   Intel_SpeedStep; Turbo; HWP; RTH; TM;SwStp_Clk; P-CTRL; EETurbo; EHalt_INDP; EHalt_ULFM-->
+                    <!--Valid Single Config value:-->
+                    <!--   Default,Enable;Disable;Random;Toggle-->
+                </CONFIG>
+                <SETTING>
+                    <!--Valid Settings options for CSTATES:PCxLimit-->
+                    <!--Valid Settings options for PSTATES : Turbo_Activate_Ratios; Fast_MSR-->
+                </SETTING>
+            </CORE>
+            <POWER>
+                <CONFIG>
+                    <!--Valid Config options for Power:-->
+                    <!--RAPL_Pkg_Clamp_Limit1; RAPL_Pkg_Power_Limit2; RAPL_Pkg_Clamp_Limit2-->
+                    <!--Valid Single Config value:-->
+                    <!--   Default,Enable;Disable;Random;Toggle-->
+                </CONFIG>
+                <SETTING>
+                    <!--Valid Settings options for Power:-->
+                    <!--   Pkg_Power_Limit1_Watt; Pkg_Time_Limit1; Pkg_Power_Limit2_Watt; Pkg_Time_Limit2-->
+                </SETTING>
+            </POWER>
+            <UNCORE/>
+            <BIOSKNOBS/>
+        </SysConfiguration>
+        <CustomConfiguration>
+            <MSR_CFG/>
+            <PCIE_CFG/>
+            <PMC-MMIO/>
+            <GT-MMIO/>
+            <P2SB-MMIO/>
+            <ISP-MMIO/>
+            <MMIO/>
+            <CRBCFG/>
+            <IOSFCFG/>
+            <MailBoxCfg/>
+        </CustomConfiguration>
+    </GLOBALCONFIGURATION>
+</SOLAR>
