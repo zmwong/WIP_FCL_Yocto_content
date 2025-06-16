@@ -11,10 +11,21 @@ import os
 import sys
 import time
 
+
+
 utils_folder = r'/data/validation/yocto-test-content/val_common/python_utils/'
+utils_folder = r'c:/Validation/yocto-test-content/val_common/python_utils/'
 if utils_folder not in sys.path:
     sys.path.append(utils_folder)
 sys.path.append(r"/data/validation/yocto-test-content/concurrency/common/reporter/")
+sys.path.append(r"c:\Validation\yocto-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\yocto-test-content\val_common\python_utils/")
+
+
+sys.path.append(r"c:\Validation\windows-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\windows-test-content\val_common\python_utils/")
+
+
 
 from reporter_handler import ReportHandler
 from argparse import ArgumentParser
