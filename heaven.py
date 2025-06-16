@@ -26,6 +26,11 @@ import datetime
 import argparse
 import logging
 
+sys.path.append(r"c:\Validation\yocto-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\yocto-test-content\val_common\python_utils/")
+sys.path.append(r"c:\Validation\windows-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\windows-test-content\val_common\python_utils/")
+
 # defining logger module
 def create_logger(name, path):
     logger = logging.getLogger(__name__)

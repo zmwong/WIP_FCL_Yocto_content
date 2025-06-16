@@ -28,6 +28,11 @@ import subprocess
 import psutil
 import svtools.logging.toolbox as slt
 
+sys.path.append(r"c:\Validation\yocto-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\yocto-test-content\val_common\python_utils/")
+sys.path.append(r"c:\Validation\windows-test-content\concurrency\common\reporter")
+sys.path.append(r"c:\Validation\windows-test-content\val_common\python_utils/")
+
 #Input Argument
 ap = argparse.ArgumentParser()
 group = ap.add_argument_group('required flags')
