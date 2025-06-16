@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # example of execution cmd line
-# python3 FCL_Execution1.py -t 180 -m memrunner -l 80 -s /solar_xml/sagv_3hours.xml -v Karma.mp4 -H 1
+# python3 FCL_Execution1.py -t 180 -m memrunner -l 80 -s /solar_xml/sagv_3hours.xml -v C:\Validation\windows-test-content\concurrency\content\execution\Playlist\Karma.mp4 -H 1
 
 
 """
