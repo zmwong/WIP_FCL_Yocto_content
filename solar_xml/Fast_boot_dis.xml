@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<biosknobs>
+<knob CurrentVal="0x0" name="MrcFastBoot"/>
+</biosknobs>

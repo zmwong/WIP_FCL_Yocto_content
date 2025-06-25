@@ -48,7 +48,7 @@ def vid_cmd():
     video_path = "/root/validation/videos"  # Create this directory and place videos here
     
     # VLC commands updated for AppRun
-    vid_k = f"./AppRun --extraintf=http:logger --verbose=3 -R {video_path}/Karma.mp4 --file-logging --logfile={os.path.join(log_path, runlog_path_k)}"
+    vid_k = f"./AppRun --extraintf=http:logger --verbose=3 -R /root/validation/windows-test-content/concurrency/content/execution/Playlist/Karma.mp4 --file-logging --logfile={os.path.join(log_path, runlog_path_k)}"
     vid_m = f"./AppRun --extraintf=http:logger --verbose=3 -R {video_path}/Moment.mp4 --file-logging --logfile={os.path.join(log_path, runlog_path_m)}"
     vid_n = f"./AppRun --extraintf=http:logger --verbose=3 -R {video_path}/NewZealand.mp4 --file-logging --logfile={os.path.join(log_path, runlog_path_n)}"
 
